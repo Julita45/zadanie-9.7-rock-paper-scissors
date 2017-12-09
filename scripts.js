@@ -44,8 +44,6 @@ function setGameElements() {
 }
 setGameElements();
 
-
-
 function newGame() {
   player.name = prompt('Please enter your name', 'your name');
   if (player.name) {
@@ -70,12 +68,14 @@ function playerPick(playerPick) {
 
     checkRoundWinner(playerPick, computerPick);
     setGamePoints();
-    checkFinalResult();
+    setTimeout(checkFinalResult,0);
 } 
+
 function setGamePoints() {
     playerPointsElem.innerText = player.score;
     computerPointsElem.innerText = computer.score;
 }
+
 function checkRoundWinner(playerPick, computerPick) {
   playerResultElem.innerHTML = computerResultElem.innerHTML = '';
 
